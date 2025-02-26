@@ -1,53 +1,175 @@
+/* ===== CSS Variables ===== */
+:root {
+    --primary-bg: #35424a;
+    --primary-color: #ffffff;
+    --secondary-bg: #f4f4f4;
+    --main-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Montserrat', sans-serif;
+    --nav-bg: #2c3e50;
+    --nav-text: #ecf0f1;
+    --nav-hover-bg: #ecf0f1;
+    --nav-hover-text: #2c3e50;
+    --accent-color: #e67e22;
+}
+
+/* ===== Global Styles ===== */
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--secondary-bg);
 }
 
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
+/* ===== Navigation Bar ===== */
+nav {
+    background-color: var(--nav-bg);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+nav a {
+    float: left;
+    display: block;
+    color: var(--nav-text);
     text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+nav a:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
 }
 
-h1 {
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, var(--primary-bg), var(--accent-color));
+    color: var(--primary-color);
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: var(--accent-color);
+}
+
+/* ===== Profile Image ===== */
+.profile-img {
+    max-width: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    margin-top: -75px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Headings ===== */
+h1, h2, h3 {
     margin: 0;
+    padding: 0;
 }
-
+h1 {
+    font-size: 2.5rem;
+}
 h2 {
+    font-size: 1.5rem;
     margin: 10px 0 20px;
 }
-
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section {
-    margin-bottom: 20px;
-}
-
 h3 {
-    color: #35424a;
+    color: var(--primary-bg);
+    margin-bottom: 10px;
 }
 
+/* ===== Main Content ===== */
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--main-bg);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    border-radius: 8px;
+    animation: slideUp 0.8s ease-out;
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Sections ===== */
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* ===== Lists ===== */
 ul {
     list-style-type: disc;
     margin-left: 20px;
 }
 
+/* ===== Footer ===== */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
+    padding: 15px 0;
+    background: var(--primary-bg);
+    color: var(--primary-color);
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* ===== Back to Top Button ===== */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 20px;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease;
+}
+#backToTop:hover {
+    opacity: 0.8;
+}
+
+/* ===== Responsive Design ===== */
+@media screen and (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+    header, footer {
+        padding: 20px 0;
+    }
+    nav a {
+        float: none;
+        width: 100%;
+    }
 }
