@@ -1,70 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prasun Dhar Tripathi - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prasun Dhar Tripathi - Portfolio</title>
+  <meta name="description" content="Portfolio of Prasun Dhar Tripathi - Entrepreneur, Research Enthusiast, and Strategic Leader.">
+  <meta name="keywords" content="Entrepreneur, Research, Strategic Leader, Portfolio, Bioinformatics, Coaching, AI Solutions">
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prasun Dhar Tripathi",
+    "jobTitle": "Entrepreneur, Research Enthusiast, Strategic Leader",
+    "email": "tripathidhar2025@gmail.com",
+    "url": "http://yourwebsite.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/prasun-dhar-tripathi-934214180"
+    ],
+    "description": "A results-driven professional with a proven track record in entrepreneurship, research, and team leadership."
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Navigation Bar Styling */
+    nav {
+      background-color: #333;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: #000;
+    }
+    /* Back to Top Button Styling */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      z-index: 1001;
+    }
+    /* Profile Image Styling */
+    .profile-img {
+      max-width: 150px;
+      border-radius: 50%;
+    }
+    /* Responsive Navigation for smaller screens */
+    @media screen and (max-width: 600px) {
+      nav a {
+        float: none;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Prasun Dhar Tripathi</h1>
-        <h2>Entrepreneur | Research Enthusiast | Strategic Leader</h2>
-    </header>
-    <main>
-        <section id="summary">
-            <h3>Professional Summary</h3>
-            <p>A results-driven professional with a proven track record in entrepreneurship, research, and team leadership. Through innovative ventures, I have successfully delivered impactful solutions in education and business innovation.</p>
-        </section>
-        <section id="expertise">
-            <h3>Key Expertise</h3>
-            <ul>
-                <li>Entrepreneurial Leadership</li>
-                <li>Research & Bioinformatics</li>
-                <li>Strategic Management</li>
-            </ul>
-        </section>
-        <section id="experience">
-            <h3>Professional Experience</h3>
-            <article>
-                <h4>Smart Tech Solutions | Founder</h4>
-                <ul>
-                    <li>Delivered comprehensive smart class solutions.</li>
-                    <li>Partnered with Popcorn Infotech Pvt. Ltd. for legal and financial services.</li>
-                    <li>Designed AI-driven tools enhancing student engagement.</li>
-                </ul>
-            </article>
-            <article>
-                <h4>ST Classes | Founder</h4>
-                <ul>
-                    <li>Established a coaching center for grades 5 to 12.</li>
-                    <li>Achieved a 40% increase in NEET success rates.</li>
-                </ul>
-            </article>
-            <article>
-                <h4>Research Intern (Neurodegenerative Diseases)</h4>
-                <ul>
-                    <li>Conducted research on Alzheimer's and other diseases.</li>
-                    <li>Analyzed datasets for novel therapeutic applications.</li>
-                </ul>
-            </article>
-        </section>
-        <section id="achievements">
-            <h3>Key Achievements</h3>
-            <ul>
-                <li>Transformed classroom learning with AI-integrated solutions.</li>
-                <li>Elevated NEET aspirant success rates by 40%.</li>
-                <li>Contributed critical insights in bioinformatics.</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h3>Contact Information</h3>
-            <p>Email: <a href="mailto:tripathidhar2025@gmail.com">tripathidhar2025@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/prasun-dhar-tripathi-934214180">www.linkedin.com/in/prasun-dhar-tripathi-934214180</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Prasun Dhar Tripathi. All rights reserved.</p>
-    </footer>
+  <header>
+    <!-- Navigation Bar -->
+    <nav aria-label="Main Navigation">
+      <a href="#summary">Summary</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="text-align:center; margin-top:20px;">
+      <!-- Replace "profile.jpg" with your actual profile image -->
+      <img src="profile.jpg" alt="Prasun Dhar Tripathi" class="profile-img">
+      <h1>Prasun Dhar Tripathi</h1>
+      <h2>Entrepreneur | Research Enthusiast | Strategic Leader</h2>
+    </div>
+  </header>
+  <main>
+    <section id="summary">
+      <h3>Professional Summary</h3>
+      <p>A results-driven professional with a proven track record in entrepreneurship, research, and team leadership. Through innovative ventures, I have successfully delivered impactful solutions in education and business innovation.</p>
+    </section>
+    <section id="expertise">
+      <h3>Key Expertise</h3>
+      <ul>
+        <li>Entrepreneurial Leadership</li>
+        <li>Research & Bioinformatics</li>
+        <li>Strategic Management</li>
+      </ul>
+    </section>
+    <section id="experience">
+      <h3>Professional Experience</h3>
+      <article>
+        <h4>Smart Tech Solutions | Founder</h4>
+        <ul>
+          <li>Delivered comprehensive smart class solutions.</li>
+          <li>Partnered with Popcorn Infotech Pvt. Ltd. for legal and financial services.</li>
+          <li>Designed AI-driven tools enhancing student engagement.</li>
+        </ul>
+      </article>
+      <article>
+        <h4>ST Classes | Founder</h4>
+        <ul>
+          <li>Established a coaching center for grades 5 to 12.</li>
+          <li>Achieved a 40% increase in NEET success rates.</li>
+        </ul>
+      </article>
+      <article>
+        <h4>Research Intern (Neurodegenerative Diseases)</h4>
+        <ul>
+          <li>Conducted research on Alzheimer's and other diseases.</li>
+          <li>Analyzed datasets for novel therapeutic applications.</li>
+        </ul>
+      </article>
+    </section>
+    <section id="achievements">
+      <h3>Key Achievements</h3>
+      <ul>
+        <li>Transformed classroom learning with AI-integrated solutions.</li>
+        <li>Elevated NEET aspirant success rates by 40%.</li>
+        <li>Contributed critical insights in bioinformatics.</li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h3>Contact Information</h3>
+      <p>Email: <a href="mailto:tripathidhar2025@gmail.com">tripathidhar2025@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/prasun-dhar-tripathi-934214180" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/prasun-dhar-tripathi-934214180</a></p>
+      <!-- Call-to-Action Button -->
+      <button onclick="window.location.href='mailto:tripathidhar2025@gmail.com'" style="margin-top:10px;">Get in Touch</button>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Prasun Dhar Tripathi. All rights reserved.</p>
+  </footer>
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
+  <script>
+    // Toggle Back to Top button visibility on scroll
+    window.onscroll = function() { toggleBackToTop() };
+
+    function toggleBackToTop() {
+      var button = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
 </body>
 </html>
+
