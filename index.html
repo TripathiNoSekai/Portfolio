@@ -30,230 +30,244 @@
   <style>
     /* ===== CSS Variables ===== */
     :root {
-        --primary-bg: #35424a;
-        --primary-color: #ffffff;
-        --secondary-bg: #f4f4f4;
-        --main-bg: #ffffff;
-        --shadow-color: rgba(0, 0, 0, 0.1);
-        --font-family: 'Montserrat', sans-serif;
-        --nav-bg: #2c3e50;
-        --nav-text: #ecf0f1;
-        --nav-hover-bg: #ecf0f1;
-        --nav-hover-text: #2c3e50;
-        --accent-color: #e67e22;
+      --primary-bg: #35424a;
+      --primary-color: #ffffff;
+      --secondary-bg: #f4f4f4;
+      --main-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --font-family: 'Montserrat', sans-serif;
+      --nav-bg: #2c3e50;
+      --nav-text: #ecf0f1;
+      --nav-hover-bg: #ecf0f1;
+      --nav-hover-text: #2c3e50;
+      --accent-color: #e67e22;
     }
 
     /* ===== Global Styles ===== */
     body {
-        font-family: var(--font-family);
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: var(--secondary-bg);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: var(--secondary-bg);
     }
 
     /* ===== Navigation Bar ===== */
     nav {
-        background-color: transparent; /* Transparent background */
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-        backdrop-filter: blur(10px); /* Blurred effect behind text */
+      background-color: transparent;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    nav li {
+      flex: 1;
+      text-align: center;
     }
     nav a {
-        float: left;
-        display: block;
-        color: var(--nav-text);
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-        transition: background-color 0.3s ease, color 0.3s ease;
+      display: block;
+      color: var(--nav-text);
+      padding: 14px 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     nav a:hover {
-        background-color: var(--nav-hover-bg);
-        color: var(--nav-hover-text);
+      background-color: var(--nav-hover-bg);
+      color: var(--nav-hover-text);
     }
-
+    /* Hamburger Menu (hidden on larger screens) */
+    .menu-toggle {
+      display: none;
+      background: var(--nav-bg);
+      border: none;
+      color: var(--nav-text);
+      padding: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
     /* ===== Header ===== */
     header {
-        background: linear-gradient(135deg, var(--primary-bg), var(--accent-color));
-        color: var(--primary-color);
-        padding: 60px 0; /* Increased padding for space below navbar */
-        text-align: center;
-        position: relative;
-        margin-top: 0;  /* No overlap since nav is sticky, not fixed */
+      background: linear-gradient(135deg, var(--primary-bg), var(--accent-color));
+      color: var(--primary-color);
+      padding: 60px 0;
+      text-align: center;
+      position: relative;
     }
     header::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 5px;
-        width: 100%;
-        background: var(--accent-color);
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      background: var(--accent-color);
     }
-
     /* ===== Profile Image ===== */
     .profile-img {
-        max-width: 150px;
-        border-radius: 50%;
-        border: 5px solid var(--primary-color);
-        margin-top: 20px;
-        position: relative;
-        z-index: 1100;
-        animation: fadeIn 1s ease-out;
-        box-shadow: 0 4px 10px var(--shadow-color);
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      border: 5px solid var(--primary-color);
+      margin-top: 20px;
+      animation: fadeIn 1s ease-out;
+      box-shadow: 0 4px 10px var(--shadow-color);
     }
-
     /* ===== Keyframe Animations ===== */
     @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.8); }
-        to { opacity: 1; transform: scale(1); }
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
-
     /* ===== Headings ===== */
     h1, h2, h3 {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
     h1 {
-        font-size: 2.5rem;
+      font-size: 2.5rem;
     }
     h2 {
-        font-size: 1.5rem;
-        margin: 10px 0 20px;
+      font-size: 1.5rem;
+      margin: 10px 0 20px;
     }
     h3 {
-        color: var(--primary-bg);
-        margin-bottom: 10px;
+      color: var(--primary-bg);
+      margin-bottom: 10px;
     }
-
     /* ===== Main Content ===== */
     main {
-        padding: 30px;
-        max-width: 900px;
-        margin: 40px auto;
-        background: var(--main-bg);
-        box-shadow: 0 4px 10px var(--shadow-color);
-        border-radius: 8px;
-        animation: slideUp 0.8s ease-out;
+      padding: 30px;
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--main-bg);
+      box-shadow: 0 4px 10px var(--shadow-color);
+      border-radius: 8px;
+      animation: slideUp 0.8s ease-out;
     }
-
-    /* ===== Keyframe Animations ===== */
     @keyframes slideUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     /* ===== Sections ===== */
     section {
-        margin-bottom: 30px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #ddd;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
     }
     section:last-of-type {
-        border-bottom: none;
+      border-bottom: none;
     }
-
-    /* Optional: Section-specific styling */
-    #bio-details,
-    #work-experience,
-    #research-portfolio,
-    #skills,
-    #podcast,
-    #contact-details,
-    #additional-sections {
-        /* Customize these sections as needed */
-    }
-    #podcast p {
-        margin-bottom: 15px;
-    }
-
     /* ===== Lists ===== */
     ul {
-        list-style-type: disc;
-        margin-left: 20px;
+      list-style-type: disc;
+      margin-left: 20px;
     }
-
     /* ===== Footer ===== */
     footer {
-        text-align: center;
-        padding: 15px 0;
-        background: var(--primary-bg);
-        color: var(--primary-color);
-        position: relative;
-        bottom: 0;
-        width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      background: var(--primary-bg);
+      color: var(--primary-color);
+      width: 100%;
     }
-
     /* ===== Back to Top Button ===== */
     #backToTop {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        padding: 10px 20px;
-        background-color: var(--nav-bg);
-        color: var(--nav-text);
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        display: none;
-        z-index: 1001;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        transition: opacity 0.3s ease;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 10px 20px;
+      background-color: var(--nav-bg);
+      color: var(--nav-text);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: none;
+      z-index: 1001;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
     }
     #backToTop:hover {
-        opacity: 0.8;
+      opacity: 0.8;
     }
-
     /* ===== Responsive Design ===== */
     @media screen and (max-width: 600px) {
-        main {
-            padding: 20px;
-            margin: 20px;
-        }
-        header, footer {
-            padding: 20px 0;
-        }
-        nav a {
-            float: none;
-            width: 100%;
-        }
-        .profile-img {
-            margin-top: 10px;
-        }
+      /* Hamburger menu visible on mobile */
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        display: none;
+      }
+      nav.active ul {
+        display: flex;
+      }
+      nav li {
+        border-bottom: 1px solid #ddd;
+      }
+      main {
+        padding: 20px;
+        margin: 20px;
+      }
+      header, footer {
+        padding: 20px 0;
+      }
+      .profile-img {
+        max-width: 120px;
+        margin-top: 10px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      /* Increase touch target sizes */
+      nav a {
+        padding: 12px;
+        font-size: 1rem;
+      }
     }
-
-    /* ===== Sticky Nav on Scroll (Optional) ===== */
-    /* If you want the nav bar to become solid after scrolling, add the 'scrolled' class via JS. */
+    /* ===== Sticky Nav on Scroll ===== */
     nav.scrolled {
-      background-color: var(--nav-bg); /* Solid background */
-      backdrop-filter: none;          /* Remove blur effect when scrolled */
+      background-color: var(--nav-bg);
+      backdrop-filter: none;
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#summary">Summary</a>
-    <a href="#bio-details">Bio Details</a>
-    <a href="#work-experience">Experience</a>
-    <a href="#research-portfolio">Research</a>
-    <a href="#skills">Skills</a>
-    <a href="#podcast">Podcast</a>
-    <a href="#contact-details">Contact</a>
-    <a href="#additional-sections">Additional</a>
+  <!-- Navigation Bar with Hamburger Toggle -->
+  <nav id="navbar">
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    <ul>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#bio-details">Bio Details</a></li>
+      <li><a href="#work-experience">Experience</a></li>
+      <li><a href="#research-portfolio">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#contact-details">Contact</a></li>
+      <li><a href="#additional-sections">Additional</a></li>
+    </ul>
   </nav>
 
   <header>
-    <!-- Profile Image -->
+    <!-- Responsive Profile Image with srcset -->
     <img
       src="https://res.cloudinary.com/dyh8o36qo/image/upload/v1742334520/profile.jpg_rz8nbb.jpg"
+      srcset="https://res.cloudinary.com/dyh8o36qo/image/upload/w_150/v1742334520/profile.jpg_rz8nbb.jpg 150w,
+              https://res.cloudinary.com/dyh8o36qo/image/upload/w_300/v1742334520/profile.jpg_rz8nbb.jpg 300w"
+      sizes="(max-width: 600px) 120px, 150px"
       alt="Portrait of Prasun Dhar Tripathi"
       class="profile-img"
     />
@@ -281,7 +295,6 @@
     <!-- Work Experience -->
     <section id="work-experience">
       <h3>Work Experience</h3>
-      
       <article>
         <h4>🔬 Research Intern – Bangalore (Current)</h4>
         <ul>
@@ -324,7 +337,7 @@
           <li><strong>Services Provided:</strong>
             <ul>
               <li>Business Solutions for Academic Institutions: Implemented smart class solutions integrating AI for enhanced learning experiences.</li>
-              <li>Authorized Suvidha Kendra: Offered financial services under Popcorn Infotech Pvt. Ltd., including GST filing, income tax services, PAN applications, and other financial solutions.</li>
+              <li>Authorized Suvidha Kendra: Offered financial services including GST filing, income tax services, PAN applications, etc.</li>
             </ul>
           </li>
           <li><strong>Key Contributions:</strong>
@@ -341,7 +354,7 @@
         <ul>
           <li><strong>Services Provided:</strong>
             <ul>
-              <li>Launched and operated a coaching institute offering education for 5th–12th grade students.</li>
+              <li>Launched and operated a coaching institute for 5th–12th grade students.</li>
               <li>Provided NEET preparation courses with a focus on biology and zoology.</li>
             </ul>
           </li>
@@ -356,14 +369,13 @@
     
     <!-- Research and Project Portfolio -->
     <section id="research-portfolio">
-      <h3>Research and Project </h3>
-      
+      <h3>Research and Project</h3>
       <article>
         <h4>🧠 1. A Novel Therapeutic Bioinformatics Approach to Studying Neurodegenerative Disorders</h4>
         <ul>
-          <li><strong>Focus:</strong> Application of bioinformatics techniques to identify therapeutic targets for neurodegenerative diseases.</li>
-          <li><strong>Targeted Disorders:</strong> Alzheimer’s Disease (AD), Frontotemporal Dementia (FTD), Progressive Supranuclear Palsy (PSP), Corticobasal Degeneration (CBD), Chronic Traumatic Encephalopathy (CTE)</li>
-          <li><strong>Methodologies:</strong> Multi-omics data integration (proteomics, transcriptomics), molecular docking, and pathway enrichment analysis.</li>
+          <li><strong>Focus:</strong> Application of bioinformatics techniques to identify therapeutic targets.</li>
+          <li><strong>Targeted Disorders:</strong> Alzheimer’s, FTD, PSP, CBD, CTE</li>
+          <li><strong>Methodologies:</strong> Multi-omics integration, molecular docking, pathway enrichment analysis.</li>
           <li><strong>Outcomes:</strong> Identification of potential biomarkers and drug targets.</li>
         </ul>
       </article>
@@ -371,19 +383,19 @@
       <article>
         <h4>🔍 2. Bioinformatics Tools for Early Detection of Neurodegenerative Disorders</h4>
         <ul>
-          <li><strong>Focus:</strong> Leveraging bioinformatics platforms for predictive biomarker discovery.</li>
-          <li><strong>Target Disease:</strong> Alzheimer’s Disease using plasma proteomics and metabolomics data.</li>
-          <li><strong>Methodologies:</strong> Data pre-processing, statistical analysis, and biomarker validation.</li>
-          <li><strong>Outcomes:</strong> Development of a framework for early disease detection using bioinformatics tools.</li>
+          <li><strong>Focus:</strong> Leveraging platforms for predictive biomarker discovery.</li>
+          <li><strong>Target Disease:</strong> Alzheimer’s via plasma proteomics and metabolomics.</li>
+          <li><strong>Methodologies:</strong> Data pre-processing, statistical analysis, biomarker validation.</li>
+          <li><strong>Outcomes:</strong> Framework for early disease detection.</li>
         </ul>
       </article>
       
       <article>
         <h4>🦗 3. RoboRoach Behavioral Analysis Project</h4>
         <ul>
-          <li><strong>Focus:</strong> Installation of a RoboRoach kit to collect behavioral data from multiple cockroach species.</li>
+          <li><strong>Focus:</strong> Collecting behavioral data from cockroach species using a RoboRoach kit.</li>
           <li><strong>Methodologies:</strong> Neurostimulation and behavioral observation.</li>
-          <li><strong>Outcomes:</strong> Analyzed neuromodulation patterns and behavioral changes.</li>
+          <li><strong>Outcomes:</strong> Analysis of neuromodulation patterns and behavioral changes.</li>
         </ul>
       </article>
     </section>
@@ -393,39 +405,35 @@
       <h3>Skills and Expertise</h3>
       <h4>💻 Bioinformatics and Computational Skills</h4>
       <ul>
-        <li>Next-Generation Sequencing (NGS): Data processing, alignment, and variant calling.</li>
-        <li>Multi-Omics Analysis: Integration of proteomics, genomics, and transcriptomics data.</li>
-        <li>Data Visualization: PowerBI for creating interactive AI-powered dashboards.</li>
-        <li>Programming Languages: Python, R</li>
+        <li>Next-Generation Sequencing (NGS): Data processing, alignment, variant calling.</li>
+        <li>Multi-Omics Analysis: Integration of proteomics, genomics, transcriptomics.</li>
+        <li>Data Visualization: PowerBI for interactive dashboards.</li>
+        <li>Programming: Python, R</li>
       </ul>
       <h4>🔬 Laboratory and Research Techniques</h4>
       <ul>
         <li>Molecular Biology: PCR, Gel Electrophoresis, DNA Sequencing.</li>
         <li>Immunological Techniques: ELISA, Immunohistochemistry.</li>
-        <li>Biochemical Assays: Protein estimation, enzyme assays, and kinetics.</li>
-        <li>Chromatography Techniques: TLC and HPLC.</li>
+        <li>Biochemical Assays: Protein estimation, enzyme assays.</li>
+        <li>Chromatography: TLC and HPLC.</li>
         <li>Microscopy: Light and Electron Microscopy.</li>
-        <li>Cell and Developmental Biology: Cell culture and histological techniques.</li>
+        <li>Cell Culture and Histological Techniques.</li>
       </ul>
       <h4>📊 Technical Tools and Platforms</h4>
       <ul>
-        <li>Bioinformatics Tools: BLAST, Clustal Omega, and molecular docking platforms.</li>
-        <li>Data Analysis: PowerBI, Excel, and R for statistical analysis.</li>
-        <li>Version Control: GitHub (NeoVortexLab) for project repositories.</li>
+        <li>Bioinformatics Tools: BLAST, Clustal Omega, molecular docking.</li>
+        <li>Data Analysis: PowerBI, Excel, R.</li>
+        <li>Version Control: GitHub (NeoVortexLab).</li>
       </ul>
     </section>
     
     <!-- Podcast Section -->
     <section id="podcast">
       <h3>Podcast</h3>
-      <p>Listen to my podcast where I discuss topics on bioinformatics, entrepreneurship, and the future of research in neurodegenerative diseases. Stay tuned for insights, interviews, and expert opinions.</p>
+      <p>Listen to my podcast on bioinformatics, entrepreneurship, and research in neurodegenerative diseases. Stay tuned for insights, interviews, and expert opinions.</p>
       <ul>
         <li><strong>Latest Episode:</strong> <a href="#">Episode Title - Subtitle</a></li>
-        <li><strong>Subscribe on:</strong> 
-          <a href="#">Spotify</a> | 
-          <a href="#">Apple Podcasts</a> | 
-          <a href="#">Google Podcasts</a>
-        </li>
+        <li><strong>Subscribe on:</strong> <a href="#">Spotify</a> | <a href="#">Apple Podcasts</a> | <a href="#">Google Podcasts</a></li>
       </ul>
     </section>
     
@@ -454,8 +462,8 @@
       </ul>
       <h4>🌐 Community Involvement</h4>
       <ul>
-        <li>Provided coaching for competitive exams and academic tutoring.</li>
-        <li>Mentored students in scientific research and bioinformatics.</li>
+        <li>Coaching for competitive exams and academic tutoring.</li>
+        <li>Mentoring in scientific research and bioinformatics.</li>
       </ul>
     </section>
   </main>
@@ -467,19 +475,22 @@
   <!-- Back to Top Button -->
   <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
 
-  <!-- ===== Optional JavaScript for Solid Nav on Scroll ===== -->
+  <!-- ===== JavaScript for Nav Toggle and Scroll Effects ===== -->
   <script>
-    // Toggle Back to Top button visibility on scroll
+    // Toggle Hamburger Menu on Mobile
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+
+    // Toggle Back to Top button visibility and solid nav on scroll
     window.addEventListener('scroll', function() {
       const backToTopBtn = document.getElementById('backToTop');
+      const nav = document.getElementById('navbar');
       if (window.scrollY > 200) {
         backToTopBtn.style.display = 'block';
       } else {
         backToTopBtn.style.display = 'none';
       }
-
-      // If you want the nav bar to become solid after scrolling:
-      const nav = document.querySelector('nav');
       if (window.scrollY > 50) {
         nav.classList.add('scrolled');
       } else {
