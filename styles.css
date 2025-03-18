@@ -25,11 +25,12 @@ body {
 /* ===== Navigation Bar ===== */
 nav {
     background-color: var(--nav-bg);
-    overflow: hidden;
-    position: sticky;
+    position: fixed;                /* Keep navbar fixed at the top */
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    left: 0;
+    width: 100%;
+    z-index: 1000;                  /* Ensure navbar is above content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 nav a {
@@ -50,9 +51,10 @@ nav a:hover {
 header {
     background: linear-gradient(135deg, var(--primary-bg), var(--accent-color));
     color: var(--primary-color);
-    padding: 40px 0;
+    padding: 60px 0;               /* Increased padding for space below navbar */
     text-align: center;
     position: relative;
+    margin-top: 60px;               /* Added margin to prevent overlap */
 }
 header::after {
     content: "";
@@ -69,8 +71,11 @@ header::after {
     max-width: 150px;
     border-radius: 50%;
     border: 5px solid var(--primary-color);
-    margin-top: -75px;
+    margin-top: 20px;              /* Added margin to prevent overlap with navbar */
+    z-index: 1100;                  /* Ensures profile image is above navbar */
+    position: relative;             /* Ensure image positioning respects z-index */
     animation: fadeIn 1s ease-out;
+    box-shadow: 0 4px 10px var(--shadow-color); /* Added subtle shadow for depth */
 }
 
 /* ===== Keyframe Animations ===== */
@@ -188,6 +193,6 @@ footer {
         width: 100%;
     }
     .profile-img {
-        margin-top: -60px;
+        margin-top: 10px;           /* Adjusted margin for smaller screens */
     }
 }
