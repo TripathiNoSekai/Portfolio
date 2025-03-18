@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Prasun Dhar Tripathi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prasun Dhar Tripathi - Portfolio</title>
+
+  <!-- SEO Metadata -->
   <meta name="description" content="Portfolio of Prasun Dhar Tripathi - Entrepreneur, Research Enthusiast, and Strategic Leader.">
   <meta name="keywords" content="Entrepreneur, Research, Strategic Leader, Bioinformatics, AI Solutions, Neurodegenerative Research, Business Solutions">
+
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
   {
@@ -22,123 +25,242 @@
     "description": "A results-driven professional with a proven track record in entrepreneurship, research, and team leadership."
   }
   </script>
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- ===== Embedded CSS ===== -->
   <style>
-    /* Navigation Bar Styling */
+    /* ===== CSS Variables ===== */
+    :root {
+        --primary-bg: #35424a;
+        --primary-color: #ffffff;
+        --secondary-bg: #f4f4f4;
+        --main-bg: #ffffff;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --font-family: 'Montserrat', sans-serif;
+        --nav-bg: #2c3e50;
+        --nav-text: #ecf0f1;
+        --nav-hover-bg: #ecf0f1;
+        --nav-hover-text: #2c3e50;
+        --accent-color: #e67e22;
+    }
+
+    /* ===== Global Styles ===== */
+    body {
+        font-family: var(--font-family);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: var(--secondary-bg);
+    }
+
+    /* ===== Navigation Bar ===== */
     nav {
-      background-color: #333;
-      overflow: hidden;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+        background-color: transparent; /* Transparent background */
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        backdrop-filter: blur(10px); /* Blurred effect behind text */
     }
     nav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
+        float: left;
+        display: block;
+        color: var(--nav-text);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
     nav a:hover {
-      background-color: #ddd;
-      color: #000;
+        background-color: var(--nav-hover-bg);
+        color: var(--nav-hover-text);
     }
-    /* Back to Top Button Styling */
+
+    /* ===== Header ===== */
+    header {
+        background: linear-gradient(135deg, var(--primary-bg), var(--accent-color));
+        color: var(--primary-color);
+        padding: 60px 0; /* Increased padding for space below navbar */
+        text-align: center;
+        position: relative;
+        margin-top: 0;  /* No overlap since nav is sticky, not fixed */
+    }
+    header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        background: var(--accent-color);
+    }
+
+    /* ===== Profile Image ===== */
+    .profile-img {
+        max-width: 150px;
+        border-radius: 50%;
+        border: 5px solid var(--primary-color);
+        margin-top: 20px;
+        position: relative;
+        z-index: 1100;
+        animation: fadeIn 1s ease-out;
+        box-shadow: 0 4px 10px var(--shadow-color);
+    }
+
+    /* ===== Keyframe Animations ===== */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ===== Headings ===== */
+    h1, h2, h3 {
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+        margin: 10px 0 20px;
+    }
+    h3 {
+        color: var(--primary-bg);
+        margin-bottom: 10px;
+    }
+
+    /* ===== Main Content ===== */
+    main {
+        padding: 30px;
+        max-width: 900px;
+        margin: 40px auto;
+        background: var(--main-bg);
+        box-shadow: 0 4px 10px var(--shadow-color);
+        border-radius: 8px;
+        animation: slideUp 0.8s ease-out;
+    }
+
+    /* ===== Keyframe Animations ===== */
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Sections ===== */
+    section {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+    section:last-of-type {
+        border-bottom: none;
+    }
+
+    /* Optional: Section-specific styling */
+    #bio-details,
+    #work-experience,
+    #research-portfolio,
+    #skills,
+    #podcast,
+    #contact-details,
+    #additional-sections {
+        /* Customize these sections as needed */
+    }
+    #podcast p {
+        margin-bottom: 15px;
+    }
+
+    /* ===== Lists ===== */
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+        text-align: center;
+        padding: 15px 0;
+        background: var(--primary-bg);
+        color: var(--primary-color);
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* ===== Back to Top Button ===== */
     #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 10px 15px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      display: none;
-      z-index: 1001;
-      transition: 0.3s;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 10px 20px;
+        background-color: var(--nav-bg);
+        color: var(--nav-text);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        display: none;
+        z-index: 1001;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        transition: opacity 0.3s ease;
     }
     #backToTop:hover {
-      background-color: #555;
+        opacity: 0.8;
     }
-    /* Profile Image Styling */
-    .profile-img {
-      max-width: 150px;
-      border-radius: 50%;
-    }
-    /* Button Styling */
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    /* Responsive Navigation for smaller screens */
+
+    /* ===== Responsive Design ===== */
     @media screen and (max-width: 600px) {
-      nav a {
-        float: none;
-        width: 100%;
-      }
-      main {
-        padding: 15px;
-        font-size: 14px;
-      }
+        main {
+            padding: 20px;
+            margin: 20px;
+        }
+        header, footer {
+            padding: 20px 0;
+        }
+        nav a {
+            float: none;
+            width: 100%;
+        }
+        .profile-img {
+            margin-top: 10px;
+        }
     }
-    /* Main content styling for readability */
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h3, h4 {
-      color: #333;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    li {
-      margin-bottom: 10px;
+
+    /* ===== Sticky Nav on Scroll (Optional) ===== */
+    /* If you want the nav bar to become solid after scrolling, add the 'scrolled' class via JS. */
+    nav.scrolled {
+      background-color: var(--nav-bg); /* Solid background */
+      backdrop-filter: none;          /* Remove blur effect when scrolled */
     }
   </style>
 </head>
 <body>
-  <header>
-    <!-- Navigation Bar -->
-    <nav aria-label="Main Navigation">
-      <a href="#summary">Summary</a>
-      <a href="#bio-details">Bio Details</a>
-      <a href="#work-experience">Experience</a>
-      <a href="#research-portfolio">Research</a>
-      <a href="#skills">Skills</a>
-      <a href="#podcast">Podcast</a>
-      <a href="#contact-details">Contact</a>
-      <a href="#additional-sections">Additional</a>
-    </nav>
-    <div style="text-align:center; margin-top:20px;">
-      <!-- Replace "profile.jpg" with your actual file name or a hosted URL -->
-     <img 
-  src="https://res.cloudinary.com/dyh8o36qo/image/upload/v1742334520/profile.jpg_rz8nbb.jpg" 
-  alt="Portrait of Prasun Dhar Tripathi" 
-  class="profile-img" 
-/>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#bio-details">Bio Details</a>
+    <a href="#work-experience">Experience</a>
+    <a href="#research-portfolio">Research</a>
+    <a href="#skills">Skills</a>
+    <a href="#podcast">Podcast</a>
+    <a href="#contact-details">Contact</a>
+    <a href="#additional-sections">Additional</a>
+  </nav>
 
-      <h1>Prasun Dhar Tripathi</h1>
-      <h2>Entrepreneur | Research Enthusiast | Strategic Leader</h2>
-    </div>
+  <header>
+    <!-- Profile Image -->
+    <img
+      src="https://res.cloudinary.com/dyh8o36qo/image/upload/v1742334520/profile.jpg_rz8nbb.jpg"
+      alt="Portrait of Prasun Dhar Tripathi"
+      class="profile-img"
+    />
+    <h1>Prasun Dhar Tripathi</h1>
+    <h2>Entrepreneur | Research Enthusiast | Strategic Leader</h2>
   </header>
-  
+
   <main>
     <!-- Professional Summary -->
     <section id="summary">
@@ -337,23 +459,37 @@
       </ul>
     </section>
   </main>
-  
+
   <footer>
     <p>&copy; 2025 Prasun Dhar Tripathi. All rights reserved.</p>
   </footer>
   
   <!-- Back to Top Button -->
   <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
-  
-  <script defer src="script.js"></script>
+
+  <!-- ===== Optional JavaScript for Solid Nav on Scroll ===== -->
   <script>
-    window.onscroll = function() { toggleBackToTop() };
-    function toggleBackToTop() {
-      var button = document.getElementById("backToTop");
-      button.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
-    }
+    // Toggle Back to Top button visibility on scroll
+    window.addEventListener('scroll', function() {
+      const backToTopBtn = document.getElementById('backToTop');
+      if (window.scrollY > 200) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+
+      // If you want the nav bar to become solid after scrolling:
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll to top
     function scrollToTop() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>
