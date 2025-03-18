@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Prasun Dhar Tripathi">
   <title>Prasun Dhar Tripathi - Portfolio</title>
   <meta name="description" content="Portfolio of Prasun Dhar Tripathi - Entrepreneur, Research Enthusiast, and Strategic Leader.">
-  <meta name="keywords" content="Entrepreneur, Research, Strategic Leader, Portfolio, Bioinformatics, Coaching, AI Solutions">
+  <meta name="keywords" content="Entrepreneur, Research, Strategic Leader, Bioinformatics, AI Solutions, Neurodegenerative Research, Business Solutions">
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
   {
@@ -56,11 +57,28 @@
       cursor: pointer;
       display: none;
       z-index: 1001;
+      transition: 0.3s;
+    }
+    #backToTop:hover {
+      background-color: #555;
     }
     /* Profile Image Styling */
     .profile-img {
       max-width: 150px;
       border-radius: 50%;
+    }
+    /* Button Styling */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
     }
     /* Responsive Navigation for smaller screens */
     @media screen and (max-width: 600px) {
@@ -68,6 +86,30 @@
         float: none;
         width: 100%;
       }
+      main {
+        padding: 15px;
+        font-size: 14px;
+      }
+    }
+    /* Main content styling for readability */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h3, h4 {
+      color: #333;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -76,95 +118,240 @@
     <!-- Navigation Bar -->
     <nav aria-label="Main Navigation">
       <a href="#summary">Summary</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#experience">Experience</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
+      <a href="#bio-details">Bio Details</a>
+      <a href="#work-experience">Experience</a>
+      <a href="#research-portfolio">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#contact-details">Contact</a>
+      <a href="#additional-sections">Additional</a>
     </nav>
     <div style="text-align:center; margin-top:20px;">
-      <!-- Replace "profile.jpg" with your actual profile image -->
-      <img src="profile.jpg" alt="Prasun Dhar Tripathi" class="profile-img">
+      <!-- Replace "profile.jpg" with your actual file name or a hosted URL -->
+      <img src="profile.jpg" 
+           alt="Prasun Dhar Tripathi wearing clear glasses and a beard" 
+           class="profile-img">
       <h1>Prasun Dhar Tripathi</h1>
       <h2>Entrepreneur | Research Enthusiast | Strategic Leader</h2>
     </div>
   </header>
+  
   <main>
+    <!-- Professional Summary -->
     <section id="summary">
       <h3>Professional Summary</h3>
-      <p>A results-driven professional with a proven track record in entrepreneurship, research, and team leadership. Through innovative ventures, I have successfully delivered impactful solutions in education and business innovation.</p>
+      <p>A results-driven professional with expertise in bioinformatics, neurodegenerative disease research, and entrepreneurship. Proven ability to deliver AI-driven educational solutions and conduct data analysis for therapeutic insights.</p>
     </section>
-    <section id="expertise">
-      <h3>Key Expertise</h3>
+    
+    <!-- Detailed Bio Information -->
+    <section id="bio-details">
+      <h3>Personal Bio Details</h3>
+      <p>
+        <strong>🎓 Educational Background</strong><br>
+        • Master of Science (M.Sc.) in Zoology<br>
+        &nbsp;&nbsp;&nbsp;◦ Institution: K.S. Saket P.G. College, Ayodhya, DRMLAU
+      </p>
+    </section>
+    
+    <!-- Work Experience -->
+    <section id="work-experience">
+      <h3>Work Experience</h3>
+      
+      <article>
+        <h4>🔬 Research Intern – Bangalore (Current)</h4>
+        <ul>
+          <li><strong>Focus Areas:</strong>
+            <ul>
+              <li>Conducting bioinformatics research on neurodegenerative diseases using NGS and multi-omics analysis.</li>
+              <li>Developing pipelines for biomarker discovery and therapeutic target identification.</li>
+              <li>Working with large-scale proteomics and metabolomics datasets.</li>
+            </ul>
+          </li>
+          <li><strong>Key Contributions:</strong>
+            <ul>
+              <li>Performing data pre-processing, alignment, and variant calling using bioinformatics tools.</li>
+              <li>Utilizing PowerBI to create interactive dashboards for visualizing complex biological data.</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+      
+      <article>
+        <h4>💻 Freelancer – Outlier.ai</h4>
+        <ul>
+          <li><strong>Focus Areas:</strong>
+            <ul>
+              <li>Executed bioinformatics-related data analysis projects.</li>
+              <li>Delivered insights by leveraging machine learning models on biological datasets.</li>
+            </ul>
+          </li>
+          <li><strong>Key Contributions:</strong>
+            <ul>
+              <li>Analyzed large-scale biological data for pattern detection and prediction.</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+      
+      <article>
+        <h4>🚀 Founder – Smart Tech Solutions (2020–2023)</h4>
+        <ul>
+          <li><strong>Services Provided:</strong>
+            <ul>
+              <li>Business Solutions for Academic Institutions: Implemented smart class solutions integrating AI for enhanced learning experiences.</li>
+              <li>Authorized Suvidha Kendra: Offered financial services under Popcorn Infotech Pvt. Ltd., including GST filing, income tax services, PAN applications, and other financial solutions.</li>
+            </ul>
+          </li>
+          <li><strong>Key Contributions:</strong>
+            <ul>
+              <li>Led a team managing financial services and educational technology integration.</li>
+              <li>Closed the business in 2023 due to personal reasons.</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+      
+      <article>
+        <h4>📚 Founder – ST Classes (2018–2019)</h4>
+        <ul>
+          <li><strong>Services Provided:</strong>
+            <ul>
+              <li>Launched and operated a coaching institute offering education for 5th–12th grade students.</li>
+              <li>Provided NEET preparation courses with a focus on biology and zoology.</li>
+            </ul>
+          </li>
+          <li><strong>Key Contributions:</strong>
+            <ul>
+              <li>Successfully scaled the coaching center before selling it in late 2019.</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Research and Project Portfolio -->
+    <section id="research-portfolio">
+      <h3>Research and Project Portfolio</h3>
+      
+      <article>
+        <h4>🧠 1. A Novel Therapeutic Bioinformatics Approach to Studying Neurodegenerative Disorders</h4>
+        <ul>
+          <li><strong>Focus:</strong> Application of bioinformatics techniques to identify therapeutic targets for neurodegenerative diseases.</li>
+          <li><strong>Targeted Disorders:</strong> Alzheimer’s Disease (AD), Frontotemporal Dementia (FTD), Progressive Supranuclear Palsy (PSP), Corticobasal Degeneration (CBD), Chronic Traumatic Encephalopathy (CTE)</li>
+          <li><strong>Methodologies:</strong> Multi-omics data integration (proteomics, transcriptomics), molecular docking, and pathway enrichment analysis.</li>
+          <li><strong>Outcomes:</strong> Identification of potential biomarkers and drug targets.</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h4>🔍 2. Bioinformatics Tools for Early Detection of Neurodegenerative Disorders</h4>
+        <ul>
+          <li><strong>Focus:</strong> Leveraging bioinformatics platforms for predictive biomarker discovery.</li>
+          <li><strong>Target Disease:</strong> Alzheimer’s Disease using plasma proteomics and metabolomics data.</li>
+          <li><strong>Methodologies:</strong> Data pre-processing, statistical analysis, and biomarker validation.</li>
+          <li><strong>Outcomes:</strong> Development of a framework for early disease detection using bioinformatics tools.</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h4>🦗 3. RoboRoach Behavioral Analysis Project</h4>
+        <ul>
+          <li><strong>Focus:</strong> Installation of a RoboRoach kit to collect behavioral data from multiple cockroach species.</li>
+          <li><strong>Methodologies:</strong> Neurostimulation and behavioral observation.</li>
+          <li><strong>Outcomes:</strong> Analyzed neuromodulation patterns and behavioral changes.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Skills and Expertise -->
+    <section id="skills">
+      <h3>Skills and Expertise</h3>
+      <h4>💻 Bioinformatics and Computational Skills</h4>
       <ul>
-        <li>Entrepreneurial Leadership</li>
-        <li>Research & Bioinformatics</li>
-        <li>Strategic Management</li>
+        <li>Next-Generation Sequencing (NGS): Data processing, alignment, and variant calling.</li>
+        <li>Multi-Omics Analysis: Integration of proteomics, genomics, and transcriptomics data.</li>
+        <li>Data Visualization: PowerBI for creating interactive AI-powered dashboards.</li>
+        <li>Programming Languages: Python, R</li>
+      </ul>
+      <h4>🔬 Laboratory and Research Techniques</h4>
+      <ul>
+        <li>Molecular Biology: PCR, Gel Electrophoresis, DNA Sequencing.</li>
+        <li>Immunological Techniques: ELISA, Immunohistochemistry.</li>
+        <li>Biochemical Assays: Protein estimation, enzyme assays, and kinetics.</li>
+        <li>Chromatography Techniques: TLC and HPLC.</li>
+        <li>Microscopy: Light and Electron Microscopy.</li>
+        <li>Cell and Developmental Biology: Cell culture and histological techniques.</li>
+      </ul>
+      <h4>📊 Technical Tools and Platforms</h4>
+      <ul>
+        <li>Bioinformatics Tools: BLAST, Clustal Omega, and molecular docking platforms.</li>
+        <li>Data Analysis: PowerBI, Excel, and R for statistical analysis.</li>
+        <li>Version Control: GitHub (NeoVortexLab) for project repositories.</li>
       </ul>
     </section>
-    <section id="experience">
-      <h3>Professional Experience</h3>
-      <article>
-        <h4>Smart Tech Solutions | Founder</h4>
-        <ul>
-          <li>Delivered comprehensive smart class solutions.</li>
-          <li>Partnered with Popcorn Infotech Pvt. Ltd. for legal and financial services.</li>
-          <li>Designed AI-driven tools enhancing student engagement.</li>
-        </ul>
-      </article>
-      <article>
-        <h4>ST Classes | Founder</h4>
-        <ul>
-          <li>Established a coaching center for grades 5 to 12.</li>
-          <li>Achieved a 40% increase in NEET success rates.</li>
-        </ul>
-      </article>
-      <article>
-        <h4>Research Intern (Neurodegenerative Diseases)</h4>
-        <ul>
-          <li>Conducted research on Alzheimer's and other diseases.</li>
-          <li>Analyzed datasets for novel therapeutic applications.</li>
-        </ul>
-      </article>
-    </section>
-    <section id="achievements">
-      <h3>Key Achievements</h3>
+    
+    <!-- Podcast Section -->
+    <section id="podcast">
+      <h3>Podcast</h3>
+      <p>Listen to my podcast where I discuss topics on bioinformatics, entrepreneurship, and the future of research in neurodegenerative diseases. Stay tuned for insights, interviews, and expert opinions.</p>
       <ul>
-        <li>Transformed classroom learning with AI-integrated solutions.</li>
-        <li>Elevated NEET aspirant success rates by 40%.</li>
-        <li>Contributed critical insights in bioinformatics.</li>
+        <li><strong>Latest Episode:</strong> <a href="#">Episode Title - Subtitle</a></li>
+        <li><strong>Subscribe on:</strong> 
+          <a href="#">Spotify</a> | 
+          <a href="#">Apple Podcasts</a> | 
+          <a href="#">Google Podcasts</a>
+        </li>
       </ul>
     </section>
-    <section id="contact">
-      <h3>Contact Information</h3>
-      <p>Email: <a href="mailto:tripathidhar2025@gmail.com">tripathidhar2025@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/prasun-dhar-tripathi-934214180" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/prasun-dhar-tripathi-934214180</a></p>
-      <!-- Call-to-Action Button -->
-      <button onclick="window.location.href='mailto:tripathidhar2025@gmail.com'" style="margin-top:10px;">Get in Touch</button>
+    
+    <!-- Contact Details -->
+    <section id="contact-details">
+      <h3>Contact Details</h3>
+      <ul>
+        <li>Email: <a href="mailto:tripathidhar2025@gmail.com">tripathidhar2025@gmail.com</a></li>
+        <li>Phone: <a href="tel:+918318285848">8318285848</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/prasun-dhar-tripathi-934214180" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+        <li>GitHub: <a href="#">GitHub</a></li>
+        <li>Current Location: Bangalore, India</li>
+      </ul>
+    </section>
+    
+    <!-- Additional Sections -->
+    <section id="additional-sections">
+      <h3>Additional Sections</h3>
+      <h4>🎙️ Speaking Engagements & Workshops</h4>
+      <ul>
+        <li>PowerBI Workshop – OfficeMaster (2024): Certification in AI-powered interactive dashboard creation.</li>
+      </ul>
+      <h4>📚 Teaching and Coaching Experience</h4>
+      <ul>
+        <li>Founder – ST Classes (2018–2019): Delivered biology and zoology coaching for NEET aspirants and provided academic support for students (5th–12th grade).</li>
+      </ul>
+      <h4>🌐 Community Involvement</h4>
+      <ul>
+        <li>Provided coaching for competitive exams and academic tutoring.</li>
+        <li>Mentored students in scientific research and bioinformatics.</li>
+      </ul>
     </section>
   </main>
+  
   <footer>
-    <p>&copy; 2023 Prasun Dhar Tripathi. All rights reserved.</p>
+    <p>&copy; 2025 Prasun Dhar Tripathi. All rights reserved.</p>
   </footer>
+  
   <!-- Back to Top Button -->
   <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
+  
+  <script defer src="script.js"></script>
   <script>
-    // Toggle Back to Top button visibility on scroll
     window.onscroll = function() { toggleBackToTop() };
-
     function toggleBackToTop() {
       var button = document.getElementById("backToTop");
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        button.style.display = "block";
-      } else {
-        button.style.display = "none";
-      }
+      button.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
     }
-
-    // Smooth scroll to top
     function scrollToTop() {
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
   </script>
 </body>
 </html>
-
