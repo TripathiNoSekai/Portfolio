@@ -123,6 +123,20 @@ section:last-of-type {
     border-bottom: none;
 }
 
+/* Optional: Section-specific styling */
+#bio-details,
+#work-experience,
+#research-portfolio,
+#skills,
+#podcast,
+#contact-details,
+#additional-sections {
+    /* Customize these sections as needed */
+}
+#podcast p {
+    margin-bottom: 15px;
+}
+
 /* ===== Lists ===== */
 ul {
     list-style-type: disc;
@@ -164,6 +178,7 @@ footer {
 @media screen and (max-width: 600px) {
     main {
         padding: 20px;
+        margin: 20px;
     }
     header, footer {
         padding: 20px 0;
@@ -171,5 +186,8 @@ footer {
     nav a {
         float: none;
         width: 100%;
+    }
+    .profile-img {
+        margin-top: -60px;
     }
 }
