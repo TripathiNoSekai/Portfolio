@@ -115,15 +115,21 @@
       right: 10px;
       top: 5px;
     }
-
-    /* ===== Header ===== */
-    header {
-      background: var(--primary-bg);
-      color: var(--primary-color);
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-    }
+      /* ===== Header ===== */
+header {
+  /* Fallback color for when the image is loading */
+  background-color: var(--primary-bg); 
+  /* The URL of your new background image */
+  background-image: url(https://res.cloudinary.com/dyh8o36qo/image/upload/v1753515068/Gemini_Generated_Image_vd7zd4vd7zd4vd7z_o9lbbg.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  color: var(--primary-color);
+  padding: 80px 20px; /* Increased padding for better visual spacing */
+  text-align: center;
+  position: relative;
+};
     header::after {
       content: "";
       position: absolute;
