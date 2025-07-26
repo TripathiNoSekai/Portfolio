@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WB9N4MNH07"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WB9N4MNH07');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WB9N4MNH07"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WB9N4MNH07');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="author" content="Prasun Dhar Tripathi">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,12 @@
   <!-- SEO Metadata -->
   <meta name="description" content="Portfolio of Prasun Dhar Tripathi - Entrepreneur, Research Enthusiast, and Strategic Leader.">
   <meta name="keywords" content="Entrepreneur, Research, Strategic Leader, Bioinformatics, AI Solutions, Neurodegenerative Research, Business Solutions">
+
+  <!-- Font and Icon Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
@@ -39,17 +45,18 @@
   <style>
     /* ===== CSS Variables ===== */
     :root {
-      --primary-bg: #35424a;
+      --primary-bg: #2c3e50;
       --primary-color: #ffffff;
       --secondary-bg: #f4f4f4;
       --main-bg: #ffffff;
-      --shadow-color: rgba(0, 0, 0, 0.1);
+      --shadow-color: rgba(0, 0, 0, 0.08);
       --font-family: 'Montserrat', sans-serif;
       --nav-bg: #2c3e50;
       --nav-text: #ecf0f1;
       --nav-hover-bg: #ecf0f1;
       --nav-hover-text: #2c3e50;
-      --accent-color: #e67e22;
+      --accent-color: #3498db;
+      --border-radius: 12px;
     }
 
     /* ===== Global Styles ===== */
@@ -59,11 +66,12 @@
       margin: 0;
       padding: 0;
       background-color: var(--secondary-bg);
+      scroll-behavior: smooth;
     }
 
     /* ===== Navigation Bar ===== */
     nav {
-      background-color: transparent;
+      background-color: rgba(44, 62, 80, 0.8);
       position: sticky;
       top: 0;
       width: 100%;
@@ -89,26 +97,30 @@
       padding: 14px 10px;
       text-decoration: none;
       transition: background-color 0.3s ease, color 0.3s ease;
+      font-weight: 500;
     }
     nav a:hover {
       background-color: var(--nav-hover-bg);
       color: var(--nav-hover-text);
     }
-    /* Hamburger Menu (hidden on larger screens) */
     .menu-toggle {
       display: none;
-      background: var(--nav-bg);
+      background: transparent;
       border: none;
       color: var(--nav-text);
-      padding: 10px;
-      font-size: 1.2rem;
+      padding: 10px 15px;
+      font-size: 1.5rem;
       cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 5px;
     }
+
     /* ===== Header ===== */
     header {
-      background: linear-gradient(135deg, var(--primary-bg), var(--accent-color));
+      background: var(--primary-bg);
       color: var(--primary-color);
-      padding: 60px 0;
+      padding: 60px 20px;
       text-align: center;
       position: relative;
     }
@@ -121,7 +133,6 @@
       width: 100%;
       background: var(--accent-color);
     }
-    /* ===== Profile Image ===== */
     .profile-img {
       max-width: 150px;
       width: 100%;
@@ -130,124 +141,221 @@
       border: 5px solid var(--primary-color);
       margin-top: 20px;
       animation: fadeIn 1s ease-out;
-      box-shadow: 0 4px 10px var(--shadow-color);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    /* ===== Keyframe Animations ===== */
+
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.8); }
       to { opacity: 1; transform: scale(1); }
     }
-    /* ===== Headings ===== */
-    h1, h2, h3 {
+
+    h1, h2, h3, h4 {
       margin: 0;
       padding: 0;
     }
-    h1 {
-      font-size: 2.5rem;
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.5rem; margin: 10px 0 20px; font-weight: 400; }
+    h3 { 
+      color: var(--primary-bg); 
+      margin-bottom: 25px; 
+      padding-bottom: 10px; 
+      border-bottom: 3px solid var(--accent-color); 
+      display: inline-block;
     }
-    h2 {
-      font-size: 1.5rem;
-      margin: 10px 0 20px;
+    h4 {
+        color: var(--primary-bg);
+        font-size: 1.2rem;
     }
-    h3 {
-      color: var(--primary-bg);
-      margin-bottom: 10px;
-    }
-    /* ===== Main Content ===== */
+    
     main {
       padding: 30px;
-      max-width: 900px;
+      max-width: 960px;
       margin: 40px auto;
       background: var(--main-bg);
-      box-shadow: 0 4px 10px var(--shadow-color);
-      border-radius: 8px;
+      box-shadow: 0 4px 20px var(--shadow-color);
+      border-radius: var(--border-radius);
       animation: slideUp 0.8s ease-out;
     }
+
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    /* ===== Sections ===== */
+    
     section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       padding-bottom: 20px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #eee;
     }
-    section:last-of-type {
-      border-bottom: none;
+    section:last-of-type { border-bottom: none; }
+    
+    ul { list-style-type: none; margin-left: 0; padding-left: 0; }
+    ul li { margin-bottom: 10px; padding-left: 1.4em; position: relative; }
+    ul li::before {
+        content: '•';
+        color: var(--accent-color);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1.2em;
+        position: absolute;
+        left: 0.2em;
     }
-    /* ===== Lists ===== */
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    /* ===== Footer ===== */
+    
     footer {
       text-align: center;
-      padding: 15px 0;
+      padding: 20px 0;
       background: var(--primary-bg);
       color: var(--primary-color);
       width: 100%;
     }
-    /* ===== Back to Top Button ===== */
+
     #backToTop {
       position: fixed;
       bottom: 30px;
       right: 30px;
-      padding: 10px 20px;
-      background-color: var(--nav-bg);
+      height: 50px;
+      width: 50px;
+      background-color: var(--accent-color);
       color: var(--nav-text);
       border: none;
-      border-radius: 50px;
+      border-radius: 50%;
       cursor: pointer;
       display: none;
       z-index: 1001;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-size: 1.2rem;
     }
-    #backToTop:hover {
-      opacity: 0.8;
+    #backToTop:hover { opacity: 0.8; transform: translateY(-3px); }
+
+    /* --- Card and Grid System --- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
     }
-    /* ===== Responsive Design ===== */
-    @media screen and (max-width: 600px) {
-      /* Hamburger menu visible on mobile */
-      .menu-toggle {
-        display: block;
-      }
-      nav ul {
-        flex-direction: column;
-        display: none;
-      }
-      nav.active ul {
+    .experience-card, .project-card, .service-card {
+      background-color: #ffffff;
+      border-radius: var(--border-radius);
+      padding: 25px;
+      box-shadow: 0 5px 15px var(--shadow-color);
+      border: 1px solid #eee;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 20px;
+    }
+    .experience-card:hover, .project-card:hover, .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(44, 62, 80, 0.12);
+    }
+    .service-card h4 {
+      color: var(--accent-color);
+      margin-bottom: 15px;
+    }
+    .service-card i.fa-solid {
+      margin-right: 10px;
+    }
+    .experience-card h4, .project-card h4 {
+        margin-bottom: 15px;
         display: flex;
-      }
-      nav li {
-        border-bottom: 1px solid #ddd;
-      }
-      main {
-        padding: 20px;
-        margin: 20px;
-      }
-      header, footer {
-        padding: 20px 0;
-      }
-      .profile-img {
-        max-width: 120px;
-        margin-top: 10px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.2rem;
-      }
-      /* Increase touch target sizes */
-      nav a {
-        padding: 12px;
-        font-size: 1rem;
-      }
+        align-items: center;
     }
-    /* ===== Sticky Nav on Scroll ===== */
+    .experience-card h4 i, .project-card h4 i {
+        color: var(--accent-color);
+        margin-right: 12px;
+        font-size: 1.3rem;
+    }
+
+    /* --- Contact List Styling --- */
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      padding-left: 0;
+    }
+     .contact-list li::before {
+        content: ''; /* Remove bullet points */
+    }
+    .contact-list i {
+      color: var(--accent-color);
+      width: 30px;
+      text-align: center;
+      margin-right: 15px;
+      font-size: 1.2rem;
+    }
+    .contact-list a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s;
+    }
+    .contact-list a:hover {
+        color: var(--accent-color);
+    }
+
+    /* --- CTA Block Styling --- */
+    .cta-block {
+      background-color: var(--secondary-bg);
+      border-left: 5px solid var(--accent-color);
+      padding: 30px;
+      margin-top: 40px;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      text-align: center;
+    }
+    .cta-block h4 {
+      margin-top: 0;
+    }
+    .cta-buttons {
+      margin-top: 20px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      margin: 5px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .cta-button.primary {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    .cta-button.primary:hover {
+      background-color: var(--primary-bg);
+      transform: translateY(-2px);
+    }
+    .cta-button.secondary {
+      background-color: transparent;
+      color: var(--primary-bg);
+      border-color: var(--primary-bg);
+    }
+    .cta-button.secondary:hover {
+        background-color: var(--primary-bg);
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    @media screen and (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav ul { 
+        flex-direction: column; 
+        display: none; 
+        width: 100%;
+        background-color: var(--nav-bg);
+      }
+      nav.active ul { display: flex; }
+      nav li { border-bottom: 1px solid #4a627a; }
+      main { padding: 20px; margin: 20px; }
+      header, footer { padding: 40px 20px; }
+      .profile-img { max-width: 120px; margin-top: 10px; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.2rem; }
+      nav a { padding: 15px; font-size: 1rem; }
+    }
+
     nav.scrolled {
       background-color: var(--nav-bg);
       backdrop-filter: none;
@@ -255,24 +363,20 @@
   </style>
 </head>
 <body>
-  <!-- Navigation Bar with Hamburger Toggle -->
   <nav id="navbar">
     <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     <ul>
       <li><a href="#summary">Summary</a></li>
-      <li><a href="#bio-details">Bio Details</a></li>
       <li><a href="#work-experience">Experience</a></li>
       <li><a href="#research-portfolio">Research</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#podcast">Podcast</a></li>
-       <li><a href="#services">Services</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#contact-details">Contact</a></li>
-      <li><a href="#additional-sections">Additional</a></li>
     </ul>
   </nav>
 
   <header>
-    <!-- Responsive Profile Image with srcset -->
     <img
       src="https://res.cloudinary.com/dyh8o36qo/image/upload/v1742334520/profile.jpg_rz8nbb.jpg"
       srcset="https://res.cloudinary.com/dyh8o36qo/image/upload/w_150/v1742334520/profile.jpg_rz8nbb.jpg 150w,
@@ -286,288 +390,214 @@
   </header>
 
   <main>
-    <!-- Professional Summary -->
     <section id="summary">
       <h3>Professional Summary</h3>
       <p>A results-driven professional with expertise in bioinformatics, neurodegenerative disease research, and entrepreneurship. Proven ability to deliver AI-driven educational solutions and conduct data analysis for therapeutic insights.</p>
     </section>
     
-    <!-- Detailed Bio Information -->
-    <section id="bio-details">
-      <h3>Personal Bio Details</h3>
-      <p>
-        <strong>🎓 Educational Background</strong><br>
-        • Master of Science (M.Sc.) in Zoology<br>
-        &nbsp;&nbsp;&nbsp;◦ Institution: K.S. Saket P.G. College, Ayodhya, DRMLAU
-      </p>
-    </section>
-    
-    <!-- Work Experience -->
     <section id="work-experience">
       <h3>Work Experience</h3>
-      <article>
-        <h4>🔬 Research Intern – Biotecnika</h4>
+      <article class="experience-card">
+        <h4><i class="fa-solid fa-microscope"></i> Research Intern – Biotecnika</h4>
         <ul>
-          <li><strong>Focus Areas:</strong>
-            <ul>
-              <li>Conducting bioinformatics research on neurodegenerative diseases using NGS and multi-omics analysis.</li>
-              <li>Developing pipelines for biomarker discovery and therapeutic target identification.</li>
-              <li>Working with large-scale proteomics and metabolomics datasets.</li>
-            </ul>
-          </li>
-          <li><strong>Key Contributions:</strong>
-            <ul>
-              <li>Performing data pre-processing, alignment, and variant calling using bioinformatics tools.</li>
-              <li>Utilizing PowerBI to create interactive dashboards for visualizing complex biological data.</li>
-            </ul>
-          </li>
+          <li>Conducting bioinformatics research on neurodegenerative diseases using NGS and multi-omics analysis.</li>
+          <li>Developing pipelines for biomarker discovery and therapeutic target identification.</li>
+          <li>Performing data pre-processing, alignment, and variant calling.</li>
+          <li>Utilizing PowerBI to create interactive dashboards for visualizing complex biological data.</li>
         </ul>
       </article>
       
-      <article>
-        <h4>💻 Freelancer – Outlier.ai</h4>
+      <article class="experience-card">
+        <h4><i class="fa-solid fa-laptop-code"></i> Freelancer – Outlier.ai</h4>
         <ul>
-          <li><strong>Focus Areas:</strong>
-            <ul>
-              <li>Executed bioinformatics-related data analysis projects.</li>
-              <li>Delivered insights by leveraging machine learning models on biological datasets.</li>
-            </ul>
-          </li>
-          <li><strong>Key Contributions:</strong>
-            <ul>
-              <li>Analyzed large-scale biological data for pattern detection and prediction.</li>
-            </ul>
-          </li>
+            <li>Executed bioinformatics-related data analysis projects.</li>
+            <li>Delivered insights by leveraging machine learning models on biological datasets.</li>
+            <li>Analyzed large-scale biological data for pattern detection and prediction.</li>
         </ul>
       </article>
       
-      <article>
-        <h4>🚀 Founder – Smart Tech Solutions (2020–2023)</h4>
+      <article class="experience-card">
+        <h4><i class="fa-solid fa-rocket"></i> Founder – Smart Tech Solutions (2020–2023)</h4>
         <ul>
-          <li><strong>Services Provided:</strong>
-            <ul>
-              <li>Business Solutions for Academic Institutions: Implemented smart class solutions integrating AI for enhanced learning experiences.</li>
-              <li>Authorized Suvidha Kendra: Offered financial services including GST filing, income tax services, PAN applications, etc.</li>
-            </ul>
-          </li>
-          <li><strong>Key Contributions:</strong>
-            <ul>
-              <li>Led a team managing financial services and educational technology integration.</li>
-              <li>Closed the business in 2023 due to personal reasons.</li>
-            </ul>
-          </li>
+            <li>Led a team managing financial services and educational technology integration for academic institutions.</li>
+            <li>Implemented smart class solutions integrating AI for enhanced learning experiences.</li>
+            <li>Offered financial services including GST filing, income tax services, and PAN applications.</li>
         </ul>
       </article>
-      
-      <article>
-        <h4>📚 Founder – ST Classes (2018–2019)</h4>
+
+      <article class="experience-card">
+        <h4><i class="fa-solid fa-person-chalkboard"></i> Founder – ST Classes (2018–2019)</h4>
         <ul>
-          <li><strong>Services Provided:</strong>
-            <ul>
-              <li>Launched and operated a coaching institute for 5th–12th grade students.</li>
-              <li>Provided NEET preparation courses with a focus on biology and zoology.</li>
-            </ul>
-          </li>
-          <li><strong>Key Contributions:</strong>
-            <ul>
-              <li>Successfully scaled the coaching center before selling it in late 2019.</li>
-            </ul>
-          </li>
+            <li>Launched and operated a coaching institute for 5th–12th grade students.</li>
+            <li>Provided NEET preparation courses with a focus on biology and zoology.</li>
+            <li>Successfully scaled the coaching center before selling it in late 2019.</li>
         </ul>
       </article>
     </section>
     
-    <!-- Research and Project Portfolio -->
     <section id="research-portfolio">
-      <h3>Research and Project</h3>
-      <article>
-        <h4>🧠 1. A Novel Therapeutic Bioinformatics Approach to Studying Neurodegenerative Disorders</h4>
+      <h3>Research & Project Portfolio</h3>
+      <article class="project-card">
+        <h4><i class="fa-solid fa-brain"></i> 1. A Novel Therapeutic Bioinformatics Approach to Studying Neurodegenerative Disorders</h4>
         <ul>
-          <li><strong>Focus:</strong> Application of bioinformatics techniques to identify therapeutic targets.</li>
-          <li><strong>Targeted Disorders:</strong> Alzheimer’s, FTD, PSP, CBD, CTE</li>
+          <li><strong>Focus:</strong> Application of bioinformatics techniques to identify therapeutic targets for diseases like Alzheimer’s, FTD, and PSP.</li>
           <li><strong>Methodologies:</strong> Multi-omics integration, molecular docking, pathway enrichment analysis.</li>
           <li><strong>Outcomes:</strong> Identification of potential biomarkers and drug targets.</li>
         </ul>
       </article>
       
-      <article>
-        <h4>🔍 2. Bioinformatics Tools for Early Detection of Neurodegenerative Disorders</h4>
+      <article class="project-card">
+        <h4><i class="fa-solid fa-magnifying-glass-chart"></i> 2. Bioinformatics Tools for Early Detection of Neurodegenerative Disorders</h4>
         <ul>
-          <li><strong>Focus:</strong> Leveraging platforms for predictive biomarker discovery.</li>
-          <li><strong>Target Disease:</strong> Alzheimer’s via plasma proteomics and metabolomics.</li>
+          <li><strong>Focus:</strong> Leveraging platforms for predictive biomarker discovery in Alzheimer’s via plasma proteomics and metabolomics.</li>
           <li><strong>Methodologies:</strong> Data pre-processing, statistical analysis, biomarker validation.</li>
-          <li><strong>Outcomes:</strong> Framework for early disease detection.</li>
-        </ul>
-      </article>
-      
-      <article>
-        <h4>🦗 3. RoboRoach Behavioral Analysis Project</h4>
-        <ul>
-          <li><strong>Focus:</strong> Collecting behavioral data from cockroach species using a RoboRoach kit.</li>
-          <li><strong>Methodologies:</strong> Neurostimulation and behavioral observation.</li>
-          <li><strong>Outcomes:</strong> Analysis of neuromodulation patterns and behavioral changes.</li>
+          <li><strong>Outcomes:</strong> A robust framework for early disease detection.</li>
         </ul>
       </article>
     </section>
     
-    <!-- Skills and Expertise -->
     <section id="skills">
-      <h3>Skills and Expertise</h3>
-      <h4>💻 Bioinformatics and Computational Skills</h4>
-      <ul>
-        <li>Next-Generation Sequencing (NGS): Data processing, alignment, variant calling.</li>
-        <li>Multi-Omics Analysis: Integration of proteomics, genomics, transcriptomics.</li>
-        <li>Data Visualization: PowerBI for interactive dashboards.</li>
-        <li>Programming: Python, R</li>
-      </ul>
-      <h4>🔬 Laboratory and Research Techniques</h4>
-      <ul>
-        <li>Molecular Biology: PCR, Gel Electrophoresis, DNA Sequencing.</li>
-        <li>Immunological Techniques: ELISA, Immunohistochemistry.</li>
-        <li>Biochemical Assays: Protein estimation, enzyme assays.</li>
-        <li>Chromatography: TLC and HPLC.</li>
-        <li>Microscopy: Light and Electron Microscopy.</li>
-        <li>Cell Culture and Histological Techniques.</li>
-      </ul>
-      <h4>📊 Technical Tools and Platforms</h4>
-      <ul>
-        <li>Bioinformatics Tools: BLAST, Clustal Omega, molecular docking.</li>
-        <li>Data Analysis: PowerBI, Excel, R.</li>
-        <li>Version Control: GitHub (NeoVortexLab).</li>
-      </ul>
+      <h3>Skills & Expertise</h3>
+      <div class="services-grid">
+        <div class="service-card">
+          <h4><i class="fa-solid fa-computer"></i> Computational</h4>
+          <ul>
+            <li>NGS & Multi-Omics Analysis</li>
+            <li>Data Visualization (PowerBI)</li>
+            <li>Python, R</li>
+            <li>Bioinformatics Tools (BLAST)</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h4><i class="fa-solid fa-flask-vial"></i> Lab & Research</h4>
+          <ul>
+            <li>Molecular Biology (PCR)</li>
+            <li>Immunological Techniques (ELISA)</li>
+            <li>Biochemical Assays</li>
+            <li>Chromatography & Microscopy</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h4><i class="fa-solid fa-briefcase"></i> Professional</h4>
+          <ul>
+            <li>Entrepreneurship</li>
+            <li>Strategic Leadership</li>
+            <li>Project Management</li>
+            <li>Client Consultation</li>
+          </ul>
+        </div>
+      </div>
     </section>
-    
-    <!-- Podcast Section -->
+
     <section id="podcast">
-      <h3>Podcast</h3>
-      <p>Listen to my podcast on bioinformatics, entrepreneurship, and research in neurodegenerative diseases. Stay tuned for insights, interviews, and expert opinions.</p>
-      <ul>
-      <div>
-    <ul>
-        <li><strong>Subscribe on:</strong> 
-            <a href="https://open.spotify.com/show/2N7u6OyrPJnXs5a5pGfD8P?si=3Xb1vmJER5CzBsHJI9q1oQ" target="_blank" rel="noopener noreferrer">Spotify</a> | 
-            <a href="#">Apple Podcasts</a>
-        </li>
-    </ul>
-
-    <ul>
-        <li><strong>Latest Episode:</strong> 
-            <a href="https://open.spotify.com/episode/33su302LsgSykR7vZTCryn?si=0dv1xOXyR2CiN-72OrG4UA" target="_blank" rel="noopener noreferrer">
-                🎙️ <em>Beyond the Petri Dish – Where Biology Meets Computation</em> – 🔥 Exosomes: Tiny Messengers, Big Impact in Regenerative Medicine
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-
-      </ul>
+        <h3>Podcast</h3>
+        <article class="project-card">
+          <h4><i class="fa-solid fa-podcast"></i> Beyond the Petri Dish</h4>
+          <p>Listen to my podcast on bioinformatics, entrepreneurship, and research in neurodegenerative diseases. Stay tuned for insights, interviews, and expert opinions.</p>
+          <ul>
+            <li><strong>Subscribe on:</strong> 
+                <a href="https://open.spotify.com/show/2N7u6OyrPJnXs5a5pGfD8P?si=3Xb1vmJER5CzBsHJI9q1oQ" target="_blank" rel="noopener noreferrer">Spotify</a> | 
+                <a href="#">Apple Podcasts</a>
+            </li>
+            <li><strong>Latest Episode:</strong> 
+                <a href="https://open.spotify.com/episode/33su302LsgSykR7vZTCryn?si=0dv1xOXyR2CiN-72OrG4UA" target="_blank" rel="noopener noreferrer">
+                    🔥 Exosomes: Tiny Messengers, Big Impact in Regenerative Medicine
+                </a>
+            </li>
+          </ul>
+        </article>
     </section>
-    <!-- Services Section -->
-<section id="services">
-  <h3>Research & Bioinformatics Services</h3>
-  <p>I help researchers, students, and professionals deliver publication-ready results through bioinformatics analysis, academic formatting, and research support.</p>
 
-  <h4>🔹 Research Support</h4>
-  <ul>
-    <li>Literature Review Writing</li>
-    <li>Thesis/Dissertation Formatting</li>
-    <li>PowerPoint Presentations for Defense</li>
-    <li>Reference Management (Zotero, Mendeley)</li>
-  </ul>
+    <section id="services">
+      <h3>Research & Bioinformatics Services</h3>
+      <p>I help researchers, students, and professionals deliver publication-ready results through bioinformatics analysis, academic formatting, and research support.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h4><i class="fa-solid fa-book-open-reader"></i> Research Support</h4>
+          <ul>
+            <li>Literature Review Writing</li>
+            <li>Thesis/Dissertation Formatting</li>
+            <li>PowerPoint Presentations</li>
+            <li>Reference Management</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h4><i class="fa-solid fa-dna"></i> Bioinformatics Services</h4>
+          <ul>
+            <li>NGS/Omics Data Analysis</li>
+            <li>Pathway & GO Enrichment</li>
+            <li>Pipeline Setup (GATK, Galaxy)</li>
+            <li>PowerBI & R Dashboards</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h4><i class="fa-solid fa-feather-pointed"></i> Academic Writing & VA</h4>
+          <ul>
+            <li>Section-wise Research Drafting</li>
+            <li>Plagiarism Check & Proofreading</li>
+            <li>Experimental Design Support</li>
+            <li>Virtual Research Assistance</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta-block">
+        <h4>Ready to Start Your Project?</h4>
+        <p>Let's collaborate to bring your research to life. Reach out for a consultation or submit your project details directly.</p>
+        <div class="cta-buttons">
+          <a href="https://forms.gle/vgKi82qkR6TEbHVR9" class="cta-button primary" target="_blank" rel="noopener noreferrer">Submit Project Form</a>
+          <a href="https://wa.me/918318285848" class="cta-button secondary" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+        </div>
+      </div>
+    </section>
 
-  <h4>🔹 Bioinformatics Services</h4>
-  <ul>
-    <li>NGS/Omics Data Analysis (RNA-seq, proteomics, metabolomics)</li>
-    <li>Pathway & GO Enrichment (KEGG, Reactome, GSEA)</li>
-    <li>Pipeline Setup (e.g., GATK, STAR, Galaxy, Nextflow)</li>
-    <li>PowerBI & R-based Dashboard Creation</li>
-  </ul>
-
-  <h4>🔹 Academic Ghostwriting & Research VA</h4>
-  <ul>
-    <li>Section-wise Research Drafting (Intro, Methods, Discussion)</li>
-    <li>Plagiarism Check & Scientific Proofreading</li>
-    <li>Experimental Design Support + Figures</li>
-    <li>Virtual Assistance for Research (Retainer Model)</li>
-  </ul>
-
-  <h4>🛠️ How It Works</h4>
-  <ol>
-    <li>Submit your project brief (via form, email, or WhatsApp)</li>
-    <li>Optional 15-min consultation to discuss your goals</li>
-    <li>Receive a quote, timeline & partial advance payment terms</li>
-    <li>Get regular updates & previews</li>
-    <li>Final delivery + one revision (if needed)</li>
-  </ol>
-
-  <h4>📩 Ready to Start?</h4>
-  <p>
-    Drop me a message on <a href="mailto:tripathidhar2025@gmail.com">Email</a>,  
-    <a href="https://wa.me/918318285848" target="_blank">WhatsApp</a> or fill out the  
-    <a href="https://forms.gle/vgKi82qkR6TEbHVR9" target="_blank">Project Form</a>.
-   <p style="text-align:center; margin-top: 40px; font-style: italic; color: var(--text-muted);">
-    If you need a GitHub-hosted site like mine, feel free to <a href="mailto:tripathidhar2025@gmail.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: underline;">reach out</a>.
-  </p>
-</section>
-
-
-    
-    <!-- Contact Details -->
     <section id="contact-details">
       <h3>Contact Details</h3>
-      <ul>
-        <li>Email: <a href="mailto:tripathidhar2025@gmail.com">tripathidhar2025@gmail.com</a></li>
-        <li>Phone: <a href="tel:+918318285848">8318285848</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/prasun-dhar-tripathi-934214180" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
-        <li>GitHub: <a href="https://github.com/TripathiNoSekai">GitHub</a></li>
-        <li>ORCID: <a href="https://orcid.org/0009-0007-3428-3220" target="_blank" rel="noopener noreferrer">ORCID Profile</a></li>
-        <li>Current Location: Bangalore, India</li>
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:tripathidhar2025@gmail.com">tripathidhar2025@gmail.com</a></li>
+        <li><i class="fa-solid fa-phone"></i> <a href="tel:+918318285848">+91 83182 85848</a></li>
+        <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/prasun-dhar-tripathi-934214180" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+        <li><i class="fa-brands fa-github"></i> <a href="https://github.com/TripathiNoSekai" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><i class="fa-solid fa-id-card"></i> <a href="https://orcid.org/0009-0007-3428-3220" target="_blank" rel="noopener noreferrer">ORCID Profile</a></li>
+        <li><i class="fa-solid fa-location-dot"></i> Bangalore, India</li>
       </ul>
     </section>
     
-    <!-- Additional Sections -->
-    <section id="additional-sections">
-      <h3>Additional Sections</h3>
-      <h4>🎙️ Speaking Engagements & Workshops</h4>
-      <ul>
-        <li>PowerBI Workshop – OfficeMaster (2024): Certification in AI-powered interactive dashboard creation.</li>
-      </ul>
-      <h4>📚 Teaching and Coaching Experience</h4>
-      <ul>
-        <li>Founder – ST Classes (2018–2019): Delivered biology and zoology coaching for NEET aspirants and provided academic support for students (5th–12th grade).</li>
-      </ul>
-      <h4>🌐 Community Involvement</h4>
-      <ul>
-        <li>Coaching for competitive exams and academic tutoring.</li>
-        <li>Mentoring in scientific research and bioinformatics.</li>
-      </ul>
-    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Prasun Dhar Tripathi. All rights reserved.</p>
   </footer>
   
-  <!-- Back to Top Button -->
-  <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
+  <button id="backToTop" onclick="scrollToTop()" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-  <!-- ===== JavaScript for Nav Toggle and Scroll Effects ===== -->
   <script>
-    // Toggle Hamburger Menu on Mobile
+    // --- Navigation Menu Toggle for Mobile ---
     function toggleMenu() {
-      document.getElementById('navbar').classList.toggle('active');
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('active');
     }
 
-    // Toggle Back to Top button visibility and solid nav on scroll
+    // --- Close mobile menu when a link is clicked ---
+    document.querySelectorAll('#navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            const nav = document.getElementById('navbar');
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            }
+        });
+    });
+
+    // --- Scroll Effects ---
     window.addEventListener('scroll', function() {
       const backToTopBtn = document.getElementById('backToTop');
       const nav = document.getElementById('navbar');
-      if (window.scrollY > 200) {
+      // Show/hide "Back to Top" button
+      if (window.scrollY > 300) {
         backToTopBtn.style.display = 'block';
       } else {
         backToTopBtn.style.display = 'none';
       }
+      // Add scrolled class to nav for potential future styling
       if (window.scrollY > 50) {
         nav.classList.add('scrolled');
       } else {
@@ -575,7 +605,7 @@
       }
     });
 
-    // Smooth scroll to top
+    // --- Smooth Scroll to Top Function ---
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
