@@ -60,13 +60,17 @@
     }
 
     /* ===== Global Styles ===== */
+    /* Added smooth-scroll behavior as a fallback */
+    html {
+        scroll-behavior: smooth;
+    }
+    
     body {
       font-family: var(--font-family);
       line-height: 1.6;
       margin: 0;
       padding: 0;
       background-color: var(--secondary-bg);
-      scroll-behavior: smooth;
     }
 
     /* ===== Navigation Bar ===== */
@@ -116,20 +120,36 @@
       top: 5px;
     }
       /* ===== Header ===== */
-header {
-  /* Fallback color for when the image is loading */
-  background-color: var(--primary-bg); 
-  /* The URL of your new background image */
-  background-image: url(https://res.cloudinary.com/dyh8o36qo/image/upload/v1753516062/upload1_g86qfo.png);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  
-  color: var(--primary-color);
-  padding: 80px 20px; /* Increased padding for better visual spacing */
-  text-align: center;
-  position: relative;
-};
+    header {
+      /* Fallback color for when the image is loading */
+      background-color: var(--primary-bg); 
+      /* The URL of your new background image */
+      background-image: url(https://res.cloudinary.com/dyh8o36qo/image/upload/v1753516062/upload1_g86qfo.png);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      
+      color: var(--primary-color);
+      padding: 80px 20px; /* Increased padding for better visual spacing */
+      text-align: center;
+      position: relative;
+      /* Establish a stacking context for the overlay */
+      z-index: 1;
+    }
+
+    /* Add a semi-transparent overlay to make text more readable */
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(44, 62, 80, 0.5); /* Dark overlay for contrast */
+        /* Place overlay behind the content */
+        z-index: -1;
+    }
+
     header::after {
       content: "";
       position: absolute;
@@ -146,13 +166,25 @@ header {
       border-radius: 50%;
       border: 5px solid var(--primary-color);
       margin-top: 20px;
-      animation: fadeIn 1s ease-out;
+      animation: fadeIn 1s ease-out, glow 3s ease-in-out infinite 1s;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.8); }
       to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      50% {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 0 25px var(--accent-color);
+      }
+      100% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
     }
 
     h1, h2, h3, h4 {
@@ -344,6 +376,7 @@ header {
         transform: translateY(-2px);
     }
     
+    /* ===== Responsive Styles for Mobile ===== */
     @media screen and (max-width: 768px) {
       .menu-toggle { display: block; }
       nav ul { 
@@ -584,9 +617,22 @@ header {
     }
 
     // --- Close mobile menu when a link is clicked ---
+    // This also triggers the smooth scroll
     document.querySelectorAll('#navbar a').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
+            // Prevent default anchor behavior
+            event.preventDefault();
+
             const nav = document.getElementById('navbar');
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                // Smoothly scroll to the target element
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Close the mobile menu if it's active
             if (nav.classList.contains('active')) {
                 nav.classList.remove('active');
             }
